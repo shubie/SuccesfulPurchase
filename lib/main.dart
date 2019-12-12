@@ -38,7 +38,7 @@ class SuccesfulPurchase extends StatelessWidget {
                 padding: const EdgeInsets.all(25.0),
                 child: Text("Success!",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Color(0xff063057),
                         fontSize: 24,
                         fontWeight: FontWeight.w800)),
               ),
@@ -178,7 +178,7 @@ showPowerBottomSheet(BuildContext context) => showModalBottomSheet(
               listItemContainer("Date of Transaction", "17th April, 2019"),
               listItemContainer("Transaction References", "KED12435353636"),
               listItemContainer("Token", "1234 5668 4657 3849"),
-              listItemContainer("Account Tyype", "Prepaid"),
+              listItemContainer("Account Type", "Prepaid"),
             ],
           ),
         ),
