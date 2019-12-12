@@ -43,24 +43,45 @@ class SuccesfulPurchase extends StatelessWidget {
                         fontWeight: FontWeight.w800)),
               ),
             ),
-            Container(
-              margin: const EdgeInsets.all(15.0),
-              padding: const EdgeInsets.all(30.0),
-              decoration: BoxDecoration(
-                  border: Border.all(),
-                  borderRadius: BorderRadius.all(Radius.circular(10.0))),
-              child: SelectableText(
-                "4671-0884-7276-4345-8709",
-                style: TextStyle(color: Colors.black, fontSize: 18),
-                textAlign: TextAlign.justify,
+            Center(
+              child: Stack(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      margin: const EdgeInsets.all(7.0),
+                      padding: const EdgeInsets.all(30.0),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color(0xffFFAC38), width: 3),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(10.0))),
+                      child: SelectableText(
+                        "4671-0884-7276-4345-8709",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                    ),
+                  ),
+                  Align(
+                      alignment: Alignment.topCenter,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(color: Colors.white),
+                        child: Text(' Token '),
+                      )),
+                ],
               ),
             ),
             Center(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(85, 5, 85, 5),
+                padding: const EdgeInsets.fromLTRB(85, 20, 85, 20),
                 child: Text(
                     "You have successfully purchased 77.25 worth of power units for 12,000 Naira",
-                    style: TextStyle(color: Color(0xff063057), fontSize: 16),
+                    style: TextStyle(color: Color(0xff063057), fontSize: 14),
                     textAlign: TextAlign.center),
               ),
             ),
@@ -71,9 +92,8 @@ class SuccesfulPurchase extends StatelessWidget {
                 child: blueButton(
                   "Copy Token",
                   () {
-                    Clipboard.setData(new ClipboardData(text: "6474774"));
-                    // Scaffold.of(context).showSnackBar(
-                    //     new SnackBar(content: new Text("Copied to Clipboard")));
+                    Clipboard.setData(
+                        new ClipboardData(text: "4671-0884-7276-4345-8709"));
                     Flushbar(
                       title: "Ok",
                       message: "Token copied successfully",
@@ -108,7 +128,13 @@ MaterialButton viewMoreButtons(String title, Function fun) {
     onPressed: fun,
     textColor: Colors.white,
     color: const Color(0xffFFAC38),
-    child: Text(title),
+    child: SizedBox(
+      width: double.infinity,
+      child: Text(
+        title,
+        textAlign: TextAlign.left,
+      ),
+    ),
     height: 55,
     minWidth: 700,
     shape: RoundedRectangleBorder(
